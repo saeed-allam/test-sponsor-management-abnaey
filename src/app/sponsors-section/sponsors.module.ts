@@ -7,6 +7,7 @@ import { SponsorListComponent } from './sponsors/sponsor-list/sponsor-list.compo
 import { SponsorOperationComponent } from './sponsors/sponsor-operation/sponsor-operation.component';
 import { ContactOperationComponent } from './sponsors-contact/contact-operation/contact-operation.component';
 import { ContactListComponent } from './sponsors-contact/contact-list/contact-list.component';
+import { PaginationModule } from './pagination/pagination.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ContactListComponent } from './sponsors-contact/contact-list/contact-li
   imports: [
     CommonModule,
     SponsorsRoutingModule,
-    CoreModule.forRoot()
+    CoreModule.forRoot(),
+    PaginationModule
   ],
   providers:[SponsersService]
 

@@ -84,6 +84,9 @@
         </tbody>
       </table>
     </div>
+    <app-pagination class="mt-5" [total]="sponsorSer.sponsorList?.total" [scroll]="'operation-record-search'"
+    [recordPerPage]="10" [page]="1" >
+  </app-pagination>
     </ng-container>
     <ng-template #elseTemplate>
       <div class="d-flex flex-column flex-center">
