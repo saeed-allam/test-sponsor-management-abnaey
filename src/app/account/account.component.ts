@@ -12,6 +12,10 @@ import { FixedService } from '../core/service/fixed.service';
       .pointer {
         cursor: pointer;
       }
+      .login-card{
+        box-shadow: 2px 3px 10px #eee;
+        border-radius: 5%;
+      }
     `,
   ],
 })
