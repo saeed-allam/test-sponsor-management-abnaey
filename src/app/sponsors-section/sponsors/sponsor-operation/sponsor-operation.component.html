@@ -1,0 +1,162 @@
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <h2 *ngIf="f['id'].value==null">Add</h2>
+      <h2 *ngIf="f['id'].value!=null">Edit</h2>
+    </div>
+    <a class="btn btn-icon btn-light btn-sm ms-auto mt-5" [routerLink]="['/sponsor/list']">
+      <i class="ki-duotone ki-right fs-2"></i>
+    </a>
+  </div>
+  <div class="card-body p-lg-17">
+    <div class="d-flex flex-column flex-lg-row">
+      <div class="flex-lg-row-fluid">
+        <form class="form" method="post" id="kt_careers_form" [formGroup]="sponsorForm"  (ngSubmit)="onSubmit()">
+          <div class="row mb-5">
+            <div class="col-md-6 fv-row">
+              <label class="required fs-5 fw-semibold mb-2">Sponsor Name</label>
+              <input type="text" class="form-control form-control-solid" name="sponsor_name"
+                formControlName="sponsor_name" placeholder="sponsor name" [ngClass]="{
+                  'is-invalid': submitted && f['sponsor_name'].errors
+                }" />
+              <ng-container *ngIf="submitted && f['sponsor_name'].errors">
+                <div class="fv-plugins-message-container invalid-feedback" *ngIf="f['sponsor_name'].errors['required']">
+                  sponsor name IsRequired
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-md-6 fv-row">
+              <label class="required fs-5 fw-semibold mb-2">Sponsor Name Latin</label>
+              <input type="text" class="form-control form-control-solid" placeholder="sponsor name latin" name="sponsor_name_latin"
+                formControlName="sponsor_name_latin" [ngClass]="{
+                  'is-invalid': submitted && f['sponsor_name_latin'].errors
+                }" />
+              <ng-container *ngIf="submitted && f['sponsor_name_latin'].errors">
+                <div class="fv-plugins-message-container invalid-feedback"
+                  *ngIf="f['sponsor_name_latin'].errors['required']">
+                  sponsor name latin IsRequired
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-md-6 fv-row">
+              <label class="required fs-5 fw-semibold mb-2">Email</label>
+              <input class="form-control form-control-solid" placeholder="email" name="email" formControlName="email"
+                [ngClass]="{
+                  'is-invalid': submitted && f['email'].errors
+                }" />
+              <ng-container *ngIf="submitted && f['email'].errors">
+                <div class="fv-plugins-message-container invalid-feedback" *ngIf="f['email'].errors['required']">
+                  email IsRequired
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-md-6 fv-row">
+              <label class="required fs-5 fw-semibold mb-2">Mobile No</label>
+              <input type="text" class="form-control form-control-solid" placeholder="mobile no" name="phone"
+                formControlName="phone" [ngClass]="{
+                  'is-invalid': submitted && f['phone'].errors
+                }" />
+              <ng-container *ngIf="submitted && f['phone'].errors">
+                <div class="fv-plugins-message-container invalid-feedback" *ngIf="f['phone'].errors['required']">
+                  phone IsRequired
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-md-6 fv-row">
+              <label class="required fs-5 fw-semibold mb-2">Sponsor Type</label>
+              <input type="text" class="form-control form-control-solid" placeholder="sponsor type" name="sponsor_type"
+              formControlName="sponsor_type" [ngClass]="{
+                'is-invalid': submitted && f['sponsor_type'].errors
+              }" />
+            <ng-container *ngIf="submitted && f['sponsor_type'].errors">
+              <div class="fv-plugins-message-container invalid-feedback" *ngIf="f['sponsor_type'].errors['required']">
+                sponsor type IsRequired
+              </div>
+            </ng-container>
+            </div>
+            <div class="col-md-6 fv-row">
+              <label class="required fs-5 fw-semibold mb-2">Address</label>
+              <input type="text" class="form-control form-control-solid" placeholder="address" name="address"
+                formControlName="address" [ngClass]="{
+                  'is-invalid': submitted && f['address'].errors
+                }" />
+              <ng-container *ngIf="submitted && f['address'].errors">
+                <div class="fv-plugins-message-container invalid-feedback" *ngIf="f['address'].errors['required']">
+                  address IsRequired
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-md-6 fv-row">
+              <label class="required fs-5 fw-semibold mb-2">Sponsor Code</label>
+              <input type="text" class="form-control form-control-solid" placeholder="sponsor code" name="sponsor_code"
+              formControlName="sponsor_code" [ngClass]="{
+                'is-invalid': submitted && f['sponsor_code'].errors
+              }" />
+            <ng-container *ngIf="submitted && f['sponsor_code'].errors">
+              <div class="fv-plugins-message-container invalid-feedback" *ngIf="f['sponsor_code'].errors['required']">
+                sponsor code IsRequired
+              </div>
+            </ng-container>
+            </div>
+            <div class="col-md-6 fv-row">
+              <label class="required fs-5 fw-semibold mb-2">Postal Code</label>
+              <input type="text" class="form-control form-control-solid" placeholder="postal code" name="postal_code"
+                formControlName="postal_code" [ngClass]="{
+                  'is-invalid': submitted && f['postal_code'].errors
+                }" />
+              <ng-container *ngIf="submitted && f['postal_code'].errors">
+                <div class="fv-plugins-message-container invalid-feedback" *ngIf="f['postal_code'].errors['required']">
+                  postal code IsRequired
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-md-6 fv-row">
+              <label class="required fs-5 fw-semibold mb-2">Max Limit</label>
+              <input type="text" class="form-control form-control-solid" placeholder="max limit" name="max_limit"
+              formControlName="max_limit" [ngClass]="{
+                'is-invalid': submitted && f['max_limit'].errors
+              }" />
+            <ng-container *ngIf="submitted && f['max_limit'].errors">
+              <div class="fv-plugins-message-container invalid-feedback" *ngIf="f['max_limit'].errors['required']">
+                max limit IsRequired
+              </div>
+            </ng-container>
+            </div>
+            <div class="col-md-6 fv-row">
+              <label class="required fs-5 fw-semibold mb-2">Financial Limit</label>
+              <input type="text" class="form-control form-control-solid" placeholder="financial limit" name="financial_limit"
+                formControlName="financial_limit" [ngClass]="{
+                  'is-invalid': submitted && f['financial_limit'].errors
+                }" />
+              <ng-container *ngIf="submitted && f['financial_limit'].errors">
+                <div class="fv-plugins-message-container invalid-feedback" *ngIf="f['financial_limit'].errors['required']">
+                  financial limit IsRequired
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="row mb-5">
+            <div class="col-md-6 fv-row">
+          <div class="form-check form-check-custom form-check-solid ">
+            <input class="form-check-input" type="checkbox"  id="same_as_billing" formControlName="active" name="active">
+            <label class="form-check-label" for="same_as_billing">Is Active</label>
+          </div>
+          </div></div>
+
+          <div class="separator mb-8"></div>
+          <button type="submit" class="btn btn-primary">
+            <span class="indicator-label">Apply Now</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

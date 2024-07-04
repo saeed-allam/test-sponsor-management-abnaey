@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-between align-items-center flex-wrap" *ngIf="total > 0">
+  <div class="d-flex flex-wrap py-2 mr-3">
+    <button class="btn btn-icon btn-circle btn-sm btn-light-primary ms-2 my-1" (click)="change('first');"
+      [disabled]="pagination.currentPage == 1" tooltip="First">
+      <i class="fa-solid fa-angles-lef icon-xs"></i></button>
+    <button class="btn btn-icon btn-circle btn-sm btn-light-primary ms-2 my-1" (click)="change('min');"
+      [disabled]="pagination.currentPage == 1" tooltip="Previous">
+      <i class="fa-solid fa-angle-left icon-xs"></i></button>
+    <button class="btn btn-icon btn-circle btn-sm border-0 btn-light-primary ms-2 my-1"
+      *ngFor="let page of pagination?.list" [ngClass]="{'active': page == pagination?.currentPage}"
+      (click)="change('list',page)">{{page}}</button>
+    <button class="btn btn-icon btn-circle btn-sm btn-light-primary ms-2 my-1" (click)="change('plus');"
+      [disabled]="pagination.currentPage == pagination.lastPage" tooltip="Next">
+      <i class="fa-solid fa-angle-right icon-xs"></i></button>
+    <button class="btn btn-icon btn-circle btn-sm btn-light-primary ms-2 my-1" (click)="change('last');"
+      [disabled]="pagination.currentPage == pagination.lastPage" tooltip="Last">
+      <i class="fa-solid fa-angles-right icon-xs"></i></button>
+  </div>
+  <div class="d-flex align-items-center py-3">
+    <select class="form-control form-control-sm text-primary font-weight-bold border-0 bg-light-primary me-4"
+      style="width: 75px;" (change)="selectChange()" [(ngModel)]="pagination.recordPerPage">
+      <option [value]="item.value" *ngFor="let item of fixed.recordPerPage">
+        {{item.label | translate}}</option>
+    </select>
+    <span class="text-muted">
+      Displaying {{pagination.from}} - {{pagination.to}}
+      Of {{pagination.total}} Records
+    </span>
+  </div>
+</div>
+

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FixedService } from './core/service/fixed.service';
+import { SystemConfigService } from './core/service/system-config.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'test-sponsor-management-abnaey';
+  constructor(public fixed: FixedService, private configSer: SystemConfigService) {
+    this.fixed.sysConfig = this.configSer.getSystemConfig();
+  }
 }

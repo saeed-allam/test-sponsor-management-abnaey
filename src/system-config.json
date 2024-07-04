@@ -1,0 +1,6 @@
+{
+  "production": false,
+  "version": "0.0.1",
+  "domain": "gateway.abnaey.com",
+  "serverUrl": "https://gateway.abnaey.com/api/v1/"
+}
