@@ -10,7 +10,7 @@
 		border-width: 0;
 		border-style: none;
 	}
-	
+
 	>:not(:last-child)>:last-child>* {
 		border-bottom-color: inherit;
 	}
@@ -99,11 +99,11 @@
 	// Row border colors
 	@each $name, $value in $grays {
 		&.table-row-gray-#{$name} {
-			tr { 
+			tr {
 				border-bottom-color: var(--#{$prefix}gray-#{$name});
 			}
 		}
-	}	
+	}
 }
 
 // Layout fixed
@@ -133,7 +133,7 @@
 		right: auto;
 		left: auto;
 		margin-left: 0.5rem;
-	}		
+	}
 }
 
 .table-sort-asc {
@@ -172,7 +172,7 @@
 
 	.table-loading-message {
 		display: block;
-	}	
+	}
 }
 
 // Cell gutters
